@@ -9,33 +9,25 @@
     "preview": "vite preview",
     "prepare": "husky install",
     "eslint": "eslint --ext .js,.vue --ignore-path .gitignore --fix src",
-    "prettier": "prettier --write  \"src/**/*.{js,json,tsx,css,less,scss,vue,html,md}\""
+    "prettier": "prettier . --write"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
-      "pre-add":"lint-staged",
-      "pre-commit": "lint-staged",
-      "pre-push": "lint-staged"
-    }
-  },
-  "gitHooks": {
-    "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
-    "pre-commit": "lint-staged"
-  },
+
   "lint-staged": {
-    "*src/**/*.{html,vue,css,scss}": [
+    "src/**/*.{html,vue,css,scss}": [
       "prettier --write",
-      "stylelint --fix",
-      "git add"
+      "stylelint --fix"
     ],
-    "*.{js,ts,vue,md}": [
+    "src/**/*.{js,ts,vue}": [
       "prettier --write",
-      "eslint --fix",
-      "git add -A"
+      "eslint --fix"
+    ],
+    "*.md": [
+      "prettier --write",
+      "eslint --fix"
     ]
   },
   "dependencies": {
+    "@babel/core": "^7.18.5",
     "axios": "^0.27.2",
     "dayjs": "^1.11.3",
     "pinia": "^2.0.14",
@@ -45,9 +37,8 @@
     "vue-router": "^4.0.16"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.5",
-    "@commitlint/cli": "^17.0.3",
-    "@commitlint/config-conventional": "^17.0.3",
+    "@commitlint/cli": "16.2.4",
+    "@commitlint/config-conventional": "16.2.4",
     "@types/node": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
@@ -59,7 +50,7 @@
     "eslint-plugin-standard": "^5.0.0",
     "eslint-plugin-vue": "^9.1.1",
     "husky": "^8.0.1",
-    "lint-staged": "^13.0.3",
+    "lint-staged": "12.4.1",
     "prettier": "^2.7.1",
     "stylelint": "^14.9.1",
     "stylelint-config-recess-order": "^3.0.0",

@@ -2,3 +2,4 @@
 ./startand/*.js
 .eslintcache
 ./dist/*
+./commitlint.config.js
