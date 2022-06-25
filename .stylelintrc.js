@@ -1,8 +1,8 @@
 module.exports = {
   root:true,
-  extends: ["stylelint-config-standard", "stylelint-config-recess-order"],
-  plugins: ["stylelint-scss"],
-  defaultSeverity: "warning",
+  plugins: ["stylelint-order"],
+  extends: ["stylelint-config-standard","'stylelint-config-prettier'"],
+  customSyntax: 'postcss-html',
   rules: {
     'function-no-unknown': null,
     'selector-class-pattern': null,
@@ -32,6 +32,8 @@ module.exports = {
           'each',
           'include',
           'mixin',
+          "extend",
+          "return"
         ],
       },
     ],
@@ -71,4 +73,30 @@ module.exports = {
     ],
   },
   ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts'],
+  overrides: [
+    {
+      files: ['*.vue', '**/*.vue', '*.html', '**/*.html'],
+      extends: ['stylelint-config-recommended'],
+      rules: {
+        'keyframes-name-pattern': null,
+        'selector-pseudo-class-no-unknown': [
+          true,
+          {
+            ignorePseudoClasses: ['deep', 'global'],
+          },
+        ],
+        'selector-pseudo-element-no-unknown': [
+          true,
+          {
+            ignorePseudoElements: ['v-deep', 'v-global', 'v-slotted'],
+          },
+        ],
+      },
+    },
+    {
+      files: ['*.scss', '**/*.scss'],
+      customSyntax: 'postcss-scss',
+      extends: ['stylelint-config-standard', 'stylelint-config-recommended-vue'],
+    },
+  ],
 };

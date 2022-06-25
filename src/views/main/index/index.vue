@@ -1,5 +1,5 @@
 <template>
-  <div class=""> 这就是首页吗？ </div>
+  <div class="home"> 这就是首页吗？ </div>
 </template>
 
 <script lang="ts">
@@ -20,4 +20,11 @@ export default defineComponent({
 });
 </script>
 
-<style lang="less" scoped></style>
+<style lang="scss" scoped>
+.home {
+  font-size: 30px;
+  color: #333;
+  margin: 100px auto;
+  text-align: center;
+}
+</style>
