@@ -1,0 +1,18 @@
+$colors: (
+  bodyColor: #f5f7f9,
+  // 主题色
+  theme: #006939,
+  //  rgb(0, 105, 57),
+  // 主题白
+  light: #fff,
+  // 主题黑
+  dark: #000,
+  // 标题黑
+  titleColor: #333,
+  // 边框色
+  borderGrey: #d1d1d1
+);
+
+@function color($key) {
+  @return map-get($map: $colors, $key: $key);
+}

@@ -1,0 +1,10 @@
+/dist/*
+.local
+/node_modules/**
+
+**/*.svg
+**/*.sh
+
+./types/auto-imports.d.ts
+./types/components.d.ts
+./types/element-plus.d.ts
