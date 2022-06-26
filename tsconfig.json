@@ -27,6 +27,7 @@
       "@/interface/*": ["./src/interface/*"],
       "@/router/*": ["./src/router/*"],
       "@/hooks/*": ["./src/hooks/*"],
+      "@/plugins/*": ["./src/plugins/*"],
       "/@/types/*": ["./types/*"]
     }
   },
