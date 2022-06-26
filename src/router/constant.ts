@@ -1,7 +1,6 @@
 export const PAGE_NOT_FOUND_NAME = 'PageNotFound';
 
-export const EXCEPTION_COMPONENT = () =>
-  import('@/views/systerm/404/index.vue');
+export const EXCEPTION_COMPONENT = () => import('@/views/systerm/404/index.vue');
 
 /**
  * @description: default layout
