@@ -12,6 +12,14 @@
         <el-button>中文</el-button>
       </el-row>
     </div>
+
+    <div class="icons">
+      <el-icon><i-ep-BottomLeft /></el-icon>
+      <el-icon><i-ep-Bell /></el-icon>
+      <el-icon><i-ep-BellFilled /></el-icon>
+      <el-icon><i-ep-Check /></el-icon>
+      <el-icon><i-ep-Close /></el-icon>
+    </div>
   </div>
 </template>
 

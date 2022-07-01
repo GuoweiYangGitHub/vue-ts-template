@@ -1,10 +1,6 @@
 import type { AppRouteRecordRaw, AppRouteModule } from '@/router/types';
 
-import {
-  LAYOUT,
-  PAGE_NOT_FOUND_NAME,
-  EXCEPTION_COMPONENT
-} from '@/router/constant';
+import { LAYOUT, PAGE_NOT_FOUND_NAME, EXCEPTION_COMPONENT } from '@/router/constant';
 
 const modules = import.meta.globEager('./modules/**/*.ts');
 
@@ -72,10 +68,4 @@ export const PAGE_NOT_FOUND_ROUTE: AppRouteRecordRaw = {
   ]
 };
 
-export default [
-  RootRoute,
-  LoginRoute,
-  RegisterRoute,
-  ...routeModuleList,
-  PAGE_NOT_FOUND_ROUTE
-];
+export default [RootRoute, LoginRoute, RegisterRoute, ...routeModuleList, PAGE_NOT_FOUND_ROUTE];

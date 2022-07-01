@@ -2,9 +2,12 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import * as path from 'path';
 import vueJsx from '@vitejs/plugin-vue-jsx';
+import Icons from 'unplugin-icons/vite'; // icon相关
+import IconsResolver from 'unplugin-icons/resolver'; // icon相关
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+import Inspect from 'vite-plugin-inspect';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -20,13 +23,28 @@ export default defineConfig({
     vueJsx(),
     AutoImport({
       imports: ['vue', 'vue-router', '@vueuse/core'],
-      resolvers: [ElementPlusResolver()],
-      dts: './types/auto-imports.d.ts'
+      resolvers: [
+        ElementPlusResolver(),
+        IconsResolver({
+          prefix: 'Icon'
+        })
+      ],
+      dts: path.resolve(__dirname, 'types', 'auto-imports.d.ts')
     }),
     Components({
-      resolvers: [ElementPlusResolver()],
-      dts: './types/components.d.ts'
-    })
+      resolvers: [
+        // 自动注册图标组件
+        IconsResolver({
+          enabledCollections: ['ep'] // 重点，记住这里配了个ep，参数别改，就用ep，改了后我发现就不好使了
+        }),
+        ElementPlusResolver()
+      ],
+      dts: path.resolve(__dirname, 'types', 'components.d.ts')
+    }),
+    Icons({
+      autoInstall: true
+    }),
+    Inspect()
   ],
   css: {
     preprocessorOptions: {
