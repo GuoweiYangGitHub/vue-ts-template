@@ -8,6 +8,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: './',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
@@ -36,10 +37,8 @@ export default defineConfig({
   },
   server: {
     port: 8080,
-    hmr: {
-      host: '127.0.0.1',
-      port: 8080
-    },
+    host: '0.0.0.0',
+    open: true,
     // 设置http代理
     proxy: {
       '/api': {

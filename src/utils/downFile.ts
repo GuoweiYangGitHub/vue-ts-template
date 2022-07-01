@@ -1,6 +1,8 @@
 // 下载文件
-export const commonDownloadFile = (filedData: any, fileName: string) => {
-  const blob = new Blob([filedData]);
+export const commonDownloadFile = (filedData: any, fileName: string, type?: string) => {
+  const blob = new Blob(['\uFEFF' + filedData], {
+    type: type || 'text/csv,charset=UTF-8'
+  });
   // 这里是通过<a>标签的download属性来判断是否是IE浏览器
   // 只有Firefox和Chrome(内核)支持download属性， IE10以上支持blob但依然不支持download
   if ('download' in document.createElement('a')) {
