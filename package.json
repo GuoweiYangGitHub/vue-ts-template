@@ -22,8 +22,7 @@
       "eslint --fix"
     ],
     "*.md": [
-      "prettier --write",
-      "eslint --fix"
+      "prettier --write"
     ]
   },
   "dependencies": {

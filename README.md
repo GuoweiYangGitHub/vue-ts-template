@@ -1,4 +1,4 @@
-# vue项目模板
+# vue 项目模板
 
 ## 开发
 
@@ -22,13 +22,13 @@
 
 ### 分支命名
 
-| 分支 | 分支中文 | 分支英文 | 使用说明 |
-| :-: | :-: | :-: | :-: |
-| `master` | 线上分支 | master | 线上分支 |
-| `feature` | 开发分支 | feature*建分支时间*功能说明 | 功能分支 |
-| `uat` | 测试时的分支 | uat\_建分支时间 | 测试分支 |
-| `hotfix` | 线上紧急修复 bug 的分支 | hotfix\_建分支时间 | 紧急修复线上问题的分支，一般是拉 master 分支 |
-| `release` | 上线分支 | release\_建分支时间 | 一般是已经测试通过只等时间上线 |
+|   分支    |        分支中文         |          分支英文           |                   使用说明                   |
+| :-------: | :---------------------: | :-------------------------: | :------------------------------------------: |
+| `master`  |        线上分支         |           master            |                   线上分支                   |
+| `feature` |        开发分支         | feature*建分支时间*功能说明 |                   功能分支                   |
+|   `uat`   |      测试时的分支       |       uat\_建分支时间       |                   测试分支                   |
+| `hotfix`  | 线上紧急修复 bug 的分支 |     hotfix\_建分支时间      | 紧急修复线上问题的分支，一般是拉 master 分支 |
+| `release` |        上线分支         |     release\_建分支时间     |        一般是已经测试通过只等时间上线        |
 
 ### 代码提交
 
@@ -65,4 +65,27 @@ export default [
 // 例如 git commit -m 'feature: 登录功能开发'
 
 // git push
+```
+
+### 注意
+
+#### 自动导入 Icon
+
+```js
+// 自动导入icon时，不能 按照elmentIcon导入，否则会报警告
+
+// [Vue warn]: Failed to resolve component: Apple If this is a native custom element, make sure to exclude it from component resolution via compilerOptions.isCustomElement.
+
+// 错误的
+// <el-icon><BottomLeft /></el-icon> // 会出警告
+
+// 正确的
+// <el-icon><i-ep-BottomLeft /></el-icon>
+```
+
+#### Mac 电脑 husky 失效
+
+```js
+// chmod +x ./.husky/commit-msg
+// chmod +x ./.husky/pre-commit
 ```
