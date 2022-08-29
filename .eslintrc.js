@@ -11,7 +11,8 @@ module.exports = {
     ecmaVersion: 2020,
     sourceType: 'module',
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
+      tsx: true
     }
   },
 
@@ -262,6 +263,14 @@ module.exports = {
         vars: 'all', // all 检测所有变量，包括全局环境中的变量。这是默认值。
         args: 'none' // none - 不检查参数。
       }
-    ]
+    ],
+    // vue
+    'vue/no-v-html': 'off',
+    'vue/require-default-prop': 'off',
+    'vue/require-explicit-emits': 'off',
+    'vue/multi-word-component-names': 'off',
+
+    // prettier
+    'prettier/prettier': 'error'
   }
 };

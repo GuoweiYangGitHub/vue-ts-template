@@ -9,26 +9,12 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script lang="ts" setup>
 import { Toast } from 'vant';
-export default defineComponent({
-  name: 'MainIndex',
 
-  props: {},
-
-  emits: [],
-
-  setup(props, { attrs, slots, emit }) {
-    Toast.loading({
-      message: '加载中...',
-      forbidClick: true
-    });
-
-    return {};
-  },
-
-  components: {}
+Toast.loading({
+  message: '加载中...',
+  forbidClick: true
 });
 </script>
 
