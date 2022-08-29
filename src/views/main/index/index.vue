@@ -23,26 +23,19 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  name: 'MainIndex',
-
-  props: {},
-
-  emits: [],
-
-  setup(props, { attrs, slots, emit }) {
-    return {};
-  },
-
-  components: {}
-});
+<script lang="ts" setup>
+const msg = '是主页';
 </script>
 
 <style lang="scss" scoped>
 .mb-4 {
   margin-top: 40px;
+}
+
+.home {
+  font-size: 30px;
+  color: #333;
+  margin: 100px auto;
+  text-align: center;
 }
 </style>
