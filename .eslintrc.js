@@ -5,18 +5,14 @@ module.exports = {
   env: {
     node: true
   },
-  extends: [
-    'plugin:vue/vue3-essential',
-    'eslint:recommended',
-    'prettier',
-    'plugin:prettier/recommended'
-  ],
+  extends: ['plugin:vue/vue3-essential', 'eslint:recommended', 'prettier', 'plugin:prettier/recommended'],
   parserOptions: {
     parser: '@typescript-eslint/parser',
     ecmaVersion: 2020,
     sourceType: 'module',
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
+      tsx: true
     }
   },
 
@@ -204,14 +200,7 @@ module.exports = {
       2,
       'always',
       {
-        markers: [
-          'global',
-          'globals',
-          'eslint',
-          'eslint-disable',
-          '*package',
-          '!'
-        ]
+        markers: ['global', 'globals', 'eslint', 'eslint-disable', '*package', '!']
       }
     ],
     // 要求或禁止 Unicode BOM
@@ -274,6 +263,14 @@ module.exports = {
         vars: 'all', // all 检测所有变量，包括全局环境中的变量。这是默认值。
         args: 'none' // none - 不检查参数。
       }
-    ]
+    ],
+    // vue
+    'vue/no-v-html': 'off',
+    'vue/require-default-prop': 'off',
+    'vue/require-explicit-emits': 'off',
+    'vue/multi-word-component-names': 'off',
+
+    // prettier
+    'prettier/prettier': 'error'
   }
 };

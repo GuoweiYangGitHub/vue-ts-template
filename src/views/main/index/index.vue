@@ -1,23 +1,9 @@
 <template>
-  <div class="home"> 这就是首页吗？ </div>
+  <div>这就是首页吗？{{ msg }}</div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  name: 'MainIndex',
-
-  props: {},
-
-  emits: [],
-
-  setup(props, { attrs, slots, emit }) {
-    return {};
-  },
-
-  components: {}
-});
+<script lang="ts" setup>
+const msg = '是主页';
 </script>
 
 <style lang="scss" scoped>
